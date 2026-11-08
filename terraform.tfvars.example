@@ -1,0 +1,3 @@
+alert_email         = "you@example.com"
+aws_region          = "ca-central-1"
+enable_threat_intel = false
