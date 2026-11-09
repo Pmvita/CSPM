@@ -73,7 +73,9 @@ aws lambda invoke --function-name cspm-scan out.json
 terraform destroy
 ```
 
-Tests (no AWS) — preferred path is CI (GitHub Actions installs Python 3.12 + runs `pytest`). Locally, if you have a real Python (not the Windows Store stub):
+## Status
+
+**Code complete** for the eight checks above. **CI is the source of truth** for `pytest` / Terraform validate; locally verified with Python 3.12 (`pytest` 13 passed). Live `terraform apply` → SNS confirm → `aws lambda invoke` → `destroy` is **pending AWS credentials** — do not claim a live scan until those steps succeed.
 
 ```bash
 pip install -r requirements-dev.txt
